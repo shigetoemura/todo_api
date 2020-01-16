@@ -1,9 +1,12 @@
 class Api::V1::SignUpsController < Api::V1::ApplicationController
 	def create
 		user = User.new(user_params)
-		user.save!
-		serializer = Api::V1::SignUpSerializer.new(user)
-		render json: serializer.as_json
+		if 	user.save!
+			serializer = Api::V1::SignUpSerializer.new(user)
+			render json: serializer.as_json
+		else
+			render json: { message: 'error' }
+		end
 	end
 
 	private
@@ -12,7 +15,9 @@ class Api::V1::SignUpsController < Api::V1::ApplicationController
 		params.require(:user).permit(
 			:name,
 			:area,
-			:organization
+			:organization,
+			:password,
+			:password_confirmation
 			)
 	end
 end

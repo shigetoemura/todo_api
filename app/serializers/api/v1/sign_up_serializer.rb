@@ -4,6 +4,7 @@ class Api::V1::SignUpSerializer < ActiveModel::Serializer
   			:area,
   			:todo,
   			:organization,
+  			:password,
   			:token,
   			:created_at,
   			:updated_at

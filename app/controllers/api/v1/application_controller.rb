@@ -8,6 +8,7 @@ class Api::V1::ApplicationController < ApplicationController
 		User.where(token: bearer_token).first
 	end
 
+
 	private
     def bearer_token
         @bearer_token ||= begin
