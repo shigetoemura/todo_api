@@ -12,6 +12,8 @@ class Api::V1::SignUpsController < Api::V1::ApplicationController
 		params.require(:user).permit(
 			:name,
 			:area,
-			:organization)
+			:organization,
+			:todo,
+			:token)
 	end
 end
