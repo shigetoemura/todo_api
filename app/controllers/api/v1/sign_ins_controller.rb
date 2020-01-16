@@ -3,7 +3,7 @@ class Api::V1::SignInsController < Api::V1::ApplicationController
 
 	def create
 	 	@user.authenticate(sign_in_params[:password])
-	 	serializer = Api::V1::SignUpSerializer.new(@user)
+	 	serializer = Api::V1::MeSerializer.new(@user)
 	 	render json: serializer.as_json
 	end
 

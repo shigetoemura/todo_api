@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 2020_01_16_150721) do
     t.integer "todo", default: 60
     t.string "area"
     t.string "organization"
+    t.string "intro"
+    t.integer "birthday"
+    t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "token"

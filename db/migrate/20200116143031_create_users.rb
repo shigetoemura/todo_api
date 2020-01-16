@@ -5,6 +5,9 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.integer :todo, :default => 60
       t.string :area
       t.string :organization
+      t.string :intro
+      t.integer :birthday
+      t.string :gender
 
       t.timestamps
     end
